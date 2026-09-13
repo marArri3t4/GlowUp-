@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>GlowUp - Registro</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <nav>
     <a href="index.html">Home</a>
     <a href="registro.html">Registro</a>
@@ -15,40 +17,35 @@
     <a href="brochas.html">Brochas y accesorios</a>
 </nav>
 
-<h1>Registro</h1>
+<div class="form-container">
+    <h2>Registro</h2>
 
-<form action="" method="post">
+    <form action="" method="post">
 
-    <div>
-        <label><b>Nombre:</b></label><br>
+        <label><b>Nombre:</b></label>
         <input type="text" name="nombre" required>
-    </div>
 
-    <div>
-        <label><b>Apellido:</b></label><br>
+        <label><b>Apellido:</b></label>
         <input type="text" name="apellido" required>
-    </div>
 
-    <div>
-        <label><b>Email:</b></label><br>
+        <label><b>Email:</b></label>
         <input type="email" name="email" required>
-    </div>
 
-    <div>
-        <label><b>Contraseña:</b></label><br>
+        <label><b>Contraseña:</b></label>
         <input type="password" name="pass" required>
-    </div>
 
-    <div>
-        <label><b>Fecha de nacimiento:</b></label><br>
+        <label><b>Fecha de nacimiento:</b></label>
         <input type="date" name="fecha" required>
-    </div>
 
-    <div>
-        <input type="submit" value="Confirmar">
-    </div>
+        <button type="submit">Confirmar</button>
 
-</form>
+    </form>
+</div>
+<footer>
+    <p>GlowUp © 2026 - Marina Arrieta</p>
+</footer>
+</body>
+</html>
 
 </body>
 </html>
