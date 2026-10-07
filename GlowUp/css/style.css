@@ -105,4 +105,15 @@ footer {
     margin-top: 40px;
 }
 
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    width: 250px;
+}
+
 

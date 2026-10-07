@@ -6,44 +6,48 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <div id="navbar"></div>
 
-<nav>
-    <a href="../index.html">Home</a>
-    <a href="registro.html">Registro</a>
-    <a href="#">Logout</a>
-    <a href="rostro.html">Rostro</a>
-    <a href="ojos.html">Ojos</a>
-    <a href="labios.html">Labios</a>
-    <a href="brochas.html">Brochas y accesorios</a>
-</nav>
 
 <div class="form-container">
     <h2>Registro</h2>
 
-    <form action="" method="post">
+    <form id="registroForm">
 
-        <label><b>Nombre:</b></label>
-        <input type="text" name="nombre" required>
+    <label><b>Nombre:</b></label>
+    <input type="text" id="nombre" required>
 
-        <label><b>Apellido:</b></label>
-        <input type="text" name="apellido" required>
+    <label><b>Apellido:</b></label>
+    <input type="text" id="apellido" required>
 
-        <label><b>Email:</b></label>
-        <input type="email" name="email" required>
+    <label><b>Email:</b></label>
+    <input type="email" id="email" required>
 
-        <label><b>Contraseña:</b></label>
-        <input type="password" name="pass" required>
+    <label><b>Contraseña:</b></label>
+    <input type="password" id="pass" required>
 
-        <label><b>Fecha de nacimiento:</b></label>
-        <input type="date" name="fecha" required>
+    <label><b>Fecha de nacimiento:</b></label>
+    <input type="date" id="fecha" required>
 
-        <button type="submit">Confirmar</button>
+    <button type="submit">Confirmar</button>
 
-    </form>
+</form>
+
 </div>
 <footer>
     <p>GlowUp © 2026 - Marina Arrieta</p>
 </footer>
+<script type="module">
+    import { renderNavbar } from "../js/navbar.js";
+
+    
+    renderNavbar();
+
+    
+    await import("../js/logout.js");
+    await import("../js/protect.js");
+</script>
+<script src="../js/login.js"></script>
 </body>
 </html>
 

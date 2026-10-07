@@ -1,63 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head> 
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlowUp</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    
+   <div id="navbar"></div>
 
    <div class="logo-container">
-    <img src="img/logo.png" alt="GlowUp" width="120">
+    <img src="./img/logo.png" alt="GlowUp" width="120">
    </div>
-   
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="pages/registro.html">Registro</a>
-        <a href="#">Logout</a>
-        <a href="pages/rostro.html">Rostro</a>
-        <a href="pages/ojos.html">Ojos</a>
-        <a href="pages/labios.html">Labios</a>
-        <a href="pages/brochas.html">Brochas y accesorios</a>
-    </nav>
     
     <h1>Bienvenidos a GlowUp</h1>
-<div class="cards-container">
 
-    <div class="card">
-        <img src="img/Base.webp" alt="Rostro">
-        <h3>Rostro</h3>
-        <p>Ver productos</p>
-        <button onclick="location.href='pages/rostro.html'">Ir a la categoría</button>
-    </div>
+    <div id="cards"></div>
 
-    <div class="card">
-        <img src="img/Rimel.webp" alt="Ojos">
-        <h3>Ojos</h3>
-        <p>Ver productos</p>
-        <button onclick="location.href='pages/ojos.html'">Ir a la categoría</button>
-    </div>
 
-    <div class="card">
-        <img src="img/Gloss.webp" alt="Labios">
-        <h3>Labios</h3>
-        <p>Ver productos</p>
-        <button onclick="location.href='pages/labios.html'">Ir a la categoría</button>
-    </div>
-
-    <div class="card">
-        <img src="img/Brocha.webp" alt="Brochas">
-        <h3>Brochas y accesorios</h3>
-        <p>Ver productos</p>
-        <button onclick="location.href='pages/brochas.html'">Ir a la categoría</button>
-    </div>
-
-</div>
 
 <footer>
     <p>GlowUp © 2026 - Marina Arrieta</p>
 </footer>
+
+<script type="module">
+    import { renderNavbar } from "./js/navbar.js";
+    import { products } from "./js/products.js";
+    import { renderCard } from "./js/card.js";
+
+    renderNavbar();
+
+    await import("./js/logout.js");
+    await import("./js/protect.js");
+
+   
+    const container = document.getElementById("cards");
+    container.innerHTML = products.map((p, i) => renderCard(p, i)).join("");
+
+    
+    document.querySelectorAll(".card").forEach(card => {
+        const minus = card.querySelector(".minus");
+        const plus = card.querySelector(".plus");
+        const count = card.querySelector(".count");
+
+        let cantidad = 1;
+
+        minus.addEventListener("click", () => {
+            if (cantidad > 1) {
+                cantidad--;
+                count.textContent = cantidad;
+            }
+        });
+
+        plus.addEventListener("click", () => {
+            cantidad++;
+            count.textContent = cantidad;
+        });
+    });
+</script>
+
+
 </body>
 </html>
